@@ -2,75 +2,84 @@
 class Animal(object):
 	pass
 
-## ??
+## Dog is-a animal
 class Dog(Animal):
 
 	def __init__(self, name):
-		## ??
+		## Dog has-a __init__ that takes in self and name parameters
 		self.name = name
 
-## ??
+## Cat is-a animal
 class Cat(Animal):
 
 	def __init__(self, name):
-		## ??
+		## Cat has-a __init__ that takes in self and name parameters
 		self.name = name
 	
-## ??
+## Person is-a object
 class Person(object):
 
 	def __init__(self, name):
-		## ??
+		## Person has-a __init__ that takes in self and name parameters
 		self.name = name
 
-		#Person has-a pet of a kind
+		#Person has-a __init__ that takes in self and pet parameters
 		self.pet = None
 		
-## ??
+## Employee is-a person
 class Employee(Person):
 
 	def __init__(self, name, salary):
-		## ?? hmm what is this strange magic?
+		## super() function replaces the parent element
+		## same as using Person.__init__(name) 
 		super(Employee, self).__init__(name)
-		## ??
+		## Employee has-a __init__ that takes in self and salary parameters
 		self.salary = salary
+		print("His name is", self.name, "and his slary is", self.salary)
 
-## ??
+## Fish is-a object
 class Fish(object):
 	pass
 
-## ??
+## Salmon is-a fish
 class Salmon(Fish):
 	pass
 	
-## ??
+## Halibut is-a Fish
 class Halibut(Fish):
 	pass
 
 
-## rover is-a Dog
+## rover is an instance of class Dog
 rover = Dog("Rover")
 
-## satan is-a Cat
+## satan is an instance of class Cat
 satan = Cat("satan")
 
-## mary is-a Person
+## mary is an instance of class Person
 mary = Person("Mary")
+print(mary.name)
 
 ## from mary get the pet attribute and set it to satan
 mary.pet = satan
+print(satan)
 
-## frank is-a Employee
+## frank is an instance of class Employee
 frank = Employee("Frank", 120000)
+print(frank.name, frank.salary)
 
 ## from frank get the pet attribute and set it to rover
 frank.pet = rover
+print(rover)
 
-## flipper is-a Fish
+## flipper is an instance of class Fish
 flipper = Fish()
+print(flipper)
 
-## set crouse to an instance of class Salmon()
+## crouse is an instance of class Salmon
 crouse = Salmon()
+print(crouse)
 
-## set harry to an instance of Halibut()
+## harry is an instance of class Halibut
 harry = Halibut()
+print(harry)

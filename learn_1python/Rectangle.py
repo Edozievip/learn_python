@@ -28,7 +28,7 @@ class Rectangle:
 			raise ValueError ("width must be >= o")
 			self.__width = value
 		self.__width = 60
-		print(self.__print)
+		print(self.__width)
 		
 	@property
 	def height(self):
@@ -59,5 +59,5 @@ class Rectangle:
 R = Rectangle(20, 40)
 print(R.area())
 print(R.perimeter())
-#R.height(50)
-#print(height)
+print(R.width(50))
+#print(R.height())
